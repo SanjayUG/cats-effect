@@ -33,7 +33,7 @@ import munit.internal.PlatformCompat
 trait Runners extends TestInstances with RunnersPlatform {
   self: FunSuite =>
 
-  def executionTimeout: FiniteDuration = 60.seconds
+  def executionTimeout: FiniteDuration = 10.seconds
   override def munitTimeout: Duration = executionTimeout
 
   def ticked(options: TestOptions)(body: Ticker => Unit)(implicit loc: Location): Unit =

@@ -104,7 +104,7 @@ class AsyncSuite extends BaseSuite with DisciplineSuite {
     } yield ()
 
     TestControl
-      .executeEmbed(go, IORuntimeConfig(2, 4))
+      .executeEmbed(go, IORuntimeConfig(1, 2))
       .as(false)
       .recover { case _: TestControl.NonTerminationException => true }
       .replicateA(50)
